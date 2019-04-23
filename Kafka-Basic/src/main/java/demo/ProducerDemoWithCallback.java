@@ -1,4 +1,4 @@
-package org.tafzer.demo;
+package demo;
 
 
 import org.apache.kafka.clients.producer.*;
