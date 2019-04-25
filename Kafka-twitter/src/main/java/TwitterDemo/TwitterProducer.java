@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class TwitterProducer {
 
     Logger logger = LoggerFactory.getLogger(TwitterProducer.class.getName());
-    List<String> terms = Lists.newArrayList("bitcoin", "france", "inscription");
+    List<String> terms = Lists.newArrayList("bitcoin");
 
 
     public static void main(String[] args) {
@@ -73,7 +73,7 @@ public class TwitterProducer {
                logger.info(msg);
             }
             logger.info("End of Message ");
-            producer.send(new ProducerRecord<>("topic_tweet", null, msg), new Callback() {
+            producer.send(new ProducerRecord<>("twitter_tweet", null, msg), new Callback() {
                 @Override
                 public void onCompletion(RecordMetadata recordMetadata, Exception e) {
                     if(e != null){
